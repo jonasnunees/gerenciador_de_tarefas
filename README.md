@@ -147,7 +147,3 @@ Desenvolvido com 💙 por Mim mas pode ser colaborado por você <3
 ## 🐛 Encontrou um bug?
 
 Abra uma [issue](https://github.com/jonasnunees/gerenciador_de_tarefas/issues) descrevendo o problema.
-
-## 💬 Dúvidas?
-
-Sinta-se à vontade para abrir uma [discussão](https://github.com/jonasnunees/gerenciador-tarefas/discussions) ou entrar em contato!
