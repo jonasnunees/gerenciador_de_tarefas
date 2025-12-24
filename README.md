@@ -134,7 +134,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 ## 📝 Licença
 
-Este projeto está sob a licença GNU v3.0. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a licença GPL v3.0. Veja o arquivo `LICENSE` para mais detalhes.
 
 ## 👨‍💻 Autor
 
