@@ -1,0 +1,428 @@
+/*
+ * GERENCIADOR DE TAREFAS - ESTILOS CSS
+ * 
+ * Este arquivo define a aparência visual de todos os elementos da página:
+ * - Cores, tamanhos, espaçamentos
+ * - Disposição dos elementos (layout)
+ * - Efeitos visuais (hover, transições)
+ */
+
+
+/* ============================================================================
+   ESTILOS GERAIS DA PÁGINA
+   ============================================================================ */
+
+/* 
+ * Define estilos para o corpo da página (body)
+ * - font-family: tipo de letra usado
+ * - background-color: cor de fundo
+ * - display: flex e justify-content: center deixam tudo centralizado
+ * - padding: espaçamento interno
+ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/*
+ * Container principal que envolve todo o conteúdo
+ * - max-width: largura máxima (não fica muito largo em telas grandes)
+ * - border-radius: cantos arredondados
+ * - box-shadow: sombra ao redor (efeito de profundidade)
+ */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+}
+
+/*
+ * Título principal da página (h1)
+ * - text-align: center deixa o texto centralizado
+ * - margin-bottom: espaço abaixo do título
+ */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+
+/* ============================================================================
+   FORMULÁRIO DE ADICIONAR TAREFAS
+   ============================================================================ */
+
+/*
+ * Container do formulário
+ * - display: flex com flex-direction: column empilha os elementos verticalmente
+ * - gap: espaço entre cada elemento do formulário
+ */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+/*
+ * Estilos aplicados a TODOS os inputs, selects, textareas e botões
+ * Define um padrão visual consistente para todos os campos
+ */
+input, select, textarea, button {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/*
+ * Textarea específico
+ * - resize: vertical permite redimensionar apenas na vertical
+ * - font-family: inherit usa a mesma fonte do resto da página
+ */
+textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/*
+ * Estilo padrão dos botões
+ * - background-color: cor de fundo azul
+ * - cursor: pointer muda o cursor para "mãozinha" ao passar sobre o botão
+ * - transition: animação suave de 0.3 segundos ao mudar propriedades
+ */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/*
+ * Efeito hover: quando o mouse passa sobre o botão
+ * A cor de fundo fica mais escura
+ */
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* ============================================================================
+   LINHA COM CAMPOS LADO A LADO
+   ============================================================================ */
+
+/*
+ * Classe 'row' para colocar elementos lado a lado
+ * - display: flex coloca os filhos em linha horizontal
+ * - gap: espaço entre os elementos
+ */
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+/*
+ * Cada campo dentro da linha
+ * - flex: 1 faz os campos ocuparem espaço igual
+ * - flex-direction: column empilha label e input verticalmente
+ */
+.field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 0.8em;
+    color: #666;
+}
+
+
+/* ============================================================================
+   SEÇÃO DE FILTRO
+   ============================================================================ */
+
+/*
+ * Container da seção de filtro
+ * - background: cor de fundo azul claro
+ * - border: borda tracejada
+ * - border-radius: cantos arredondados
+ */
+.filter-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #ebf2fa;
+    border-radius: 8px;
+    border: 1px dashed #2980b9;
+}
+
+/* Label do filtro */
+.filter-section label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 8px;
+}
+
+/* Linha com input e botão de limpar filtro */
+.filter-row {
+    display: flex;
+    gap: 10px;
+}
+
+/* Input de mês ocupa o espaço disponível */
+.filter-row input {
+    flex: 1;
+}
+
+/* Botão de resetar filtro com cor cinza */
+#btnResetFilter {
+    background: #7f8c8d;
+    font-size: 0.8em;
+    padding: 5px 15px;
+}
+
+
+/* ============================================================================
+   GRUPOS DE TAREFAS (PENDENTES, EXPIRADAS, CONCLUÍDAS)
+   ============================================================================ */
+
+/*
+ * Cada grupo de tarefas tem seu próprio container
+ * - margin-top: espaço acima de cada seção
+ */
+.group-section {
+    margin-top: 30px;
+}
+
+/*
+ * Títulos dos grupos (h2)
+ * - border-bottom: linha abaixo do título
+ * - padding-bottom: espaço entre o texto e a linha
+ */
+h2 {
+    font-size: 1.2em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Cores específicas para cada tipo de título */
+.title-active {
+    color: #2980b9; /* Azul para tarefas ativas */
+}
+
+.title-expired {
+    color: #c0392b; /* Vermelho para tarefas expiradas */
+}
+
+.title-completed {
+    color: #27ae60; /* Verde para tarefas concluídas */
+}
+
+
+/* ============================================================================
+   LISTAS DE TAREFAS
+   ============================================================================ */
+
+/*
+ * Remove os marcadores padrão de listas (bolinhas)
+ * - list-style: none remove os marcadores
+ * - padding: 0 remove o espaçamento padrão
+ */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+ * Cada item de tarefa (li)
+ * - position: relative permite posicionar elementos internos de forma absoluta
+ * - border-left: barra colorida à esquerda (cor varia conforme a prioridade)
+ * - box-shadow: sombra sutil
+ * - display: flex com flex-direction: column empilha conteúdo verticalmente
+ */
+li {
+    position: relative;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border-left: 8px solid;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ============================================================================
+   CORES DE PRIORIDADE
+   ============================================================================ */
+
+/*
+ * As classes de prioridade definem a cor da borda esquerda e o fundo
+ * - p-alta: vermelho (alta prioridade)
+ * - p-media: laranja (média prioridade)
+ * - p-baixa: verde (baixa prioridade)
+ */
+
+/* Prioridade ALTA - Vermelho */
+.p-alta {
+    border-left-color: #e74c3c;
+    background-color: #fdedec;
+}
+
+/* Prioridade MÉDIA - Laranja */
+.p-media {
+    border-left-color: #f39c12;
+    background-color: #fef5e7;
+}
+
+/* Prioridade BAIXA - Verde */
+.p-baixa {
+    border-left-color: #27ae60;
+    background-color: #eafaf1;
+}
+
+
+/* ============================================================================
+   CONTEÚDO DA TAREFA
+   ============================================================================ */
+
+/*
+ * Cabeçalho da tarefa (task-header)
+ * - display: flex deixa o conteúdo lado a lado
+ * - justify-content: space-between separa os elementos nas extremidades
+ */
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/*
+ * Informações da tarefa (task-info)
+ * - flex: 1 ocupa o espaço disponível
+ * - margin-right: espaço à direita para separar dos botões
+ */
+.task-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 15px;
+}
+
+/* Datas de criação e entrega */
+.task-dates {
+    font-size: 0.75em;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+/* Título da tarefa (nome) */
+.task-title {
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+/*
+ * Campo de observações
+ * - background: fundo semi-transparente
+ * - border-left: barra cinza à esquerda
+ * - font-style: italic deixa o texto em itálico
+ */
+.task-obs {
+    font-size: 0.9em;
+    color: #555;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 5px 8px;
+    border-radius: 4px;
+    border-left: 2px solid #ccc;
+    font-style: italic;
+}
+
+/*
+ * Aviso de expiração (quanto tempo falta/passou)
+ * - font-weight: bold deixa o texto em negrito
+ * - color: laranja para chamar atenção
+ */
+.expiry-warning {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #d35400;
+}
+
+
+/* ============================================================================
+   BOTÕES DE AÇÃO (CONCLUIR E REMOVER)
+   ============================================================================ */
+
+/*
+ * Container dos botões de ação
+ * - display: flex coloca os botões lado a lado
+ * - justify-content: flex-end alinha os botões à direita
+ * - gap: espaço entre os botões
+ */
+.actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+/* Botão de concluir - Verde */
+.btn-done {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Botão de deletar - Vermelho */
+.btn-del {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* ============================================================================
+   TAREFAS CONCLUÍDAS
+   ============================================================================ */
+
+/*
+ * Estilo visual para tarefas marcadas como concluídas
+ * - opacity: 0.6 deixa a tarefa semi-transparente (60% de opacidade)
+ * - filter: grayscale(0.5) remove 50% da cor (fica mais cinza)
+ */
+.completed-task {
+    opacity: 0.6;
+    filter: grayscale(0.5);
+}
+
+/*
+ * Título de tarefas concluídas fica riscado (text-decoration: line-through)
+ * Isso indica visualmente que a tarefa foi finalizada
+ */
+.completed-task strong {
+    text-decoration: line-through;
+}
+
+
+/* ============================================================================
+   FIM DOS ESTILOS
+   ============================================================================ */
